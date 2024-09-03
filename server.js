@@ -65,11 +65,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Allow requests from your frontend
 app.use(cors({
-    origin: ['https://sabinn.netlify.app'],  // Allow your Netlify domain
+    origin: 'https://sabinn.netlify.app',  // Allow your Netlify domain
     methods: ['POST'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type'],
+    credentials: true
 }));
 
 // Route to handle contact form submissions
