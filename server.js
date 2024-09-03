@@ -71,6 +71,8 @@ app.use(cors({
     allowedHeaders: ['Content-Type'],
     credentials: true
 }));
+app.options('/contact', cors()); // Handle preflight requests
+
 
 // Route to handle contact form submissions
 app.post('/contact', (req, res) => {
