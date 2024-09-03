@@ -8,7 +8,7 @@ const app = express();
 
 // Enable CORS for all origins (or specify a specific origin)
 app.use(cors({
-    origin: 'http://127.0.0.1:5500' // Replace with your frontend's origin
+    origin: 'https://sabinn.netlify.app/' // Replace with your frontend's origin
 }));
 
 app.use(express.json());
