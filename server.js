@@ -6,6 +6,10 @@ require('dotenv').config();
 const app = express();
 
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Enable CORS for all origins (or specify a specific origin)
 app.use(cors({
     origin: ['https://sabinn.netlify.app/'] ,
@@ -13,8 +17,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type']
 }));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Route to handle contact form submissions
 app.post('/contact', (req, res) => {
