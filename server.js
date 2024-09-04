@@ -29,12 +29,13 @@ app.post('/contact', (req, res) => {
     });
 
     let mailOptions = {
-        from: email, 
+        from: `"${name}" <${process.env.EMAIL_USER}>`,  
         to: process.env.EMAIL_TO, 
         subject: subject,
-        text: message,
-        html: `<p>${message}</p>`,
-    };
+        text: `Message from: ${name} (${email})\n\n${message}`,
+        html: `<p>Message from: <strong>${name}</strong> (${email})</p><p>${message}</p>`,
+        replyTo: email 
+    }; 
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
