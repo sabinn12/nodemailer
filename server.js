@@ -8,12 +8,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors({
-    origin: 'https://sabinn.netlify.app',  // Allow your Netlify domain
+    origin: 'https://sabinn.netlify.app',  
     methods: ['POST'],
     allowedHeaders: ['Content-Type'],
     credentials: true
 }));
-app.options('/contact', cors()); // Handle preflight requests
+app.options('/contact', cors()); 
 
 
 // Route to handle contact form submissions
