@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors({
-    origin: 'https://irakizasabin.com/',  
+    origin: 'https://irakizasabin.com',  
     methods: ['POST'],
     allowedHeaders: ['Content-Type'],
     credentials: true
